@@ -67,9 +67,9 @@ const images = [
     },
 ]
 
-const list = document.querySelector('.gallery');
-const galleryMarkup =  createMarkup(galleryItems);
-list.innerHTML = galleryMarkup;
+
+// const galleryMarkup =  createMarkup(galleryItems);
+// list.innerHTML = galleryMarkup;
 
 function createMarkup(arr) {
     return arr.map(({preview, original, description}) => `
@@ -85,10 +85,21 @@ function createMarkup(arr) {
     `).join('')
 }
 
-list.insertAdjacentHTML('afterbegin', createMarkup(images));
+
+const gallery = document.querySelector('.gallery');
+
+gallery.insertAdjacentHTML('afterbegin', createMarkup(images));
+
+// let gallaryShow = new SimpleLightbox('.galary a');
+// gallaryShow.options('show.simplelightbox', function (images) {
+//     return;
+    
+// })
 
 const lightbox = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionType: 'attr',
     captionsData: 'alt',
     captionPosition: 'bottom',
-    captionDelay: 250,
-  });
+    captionDelay: 250
+})

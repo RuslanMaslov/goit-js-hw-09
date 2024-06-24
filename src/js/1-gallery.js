@@ -96,7 +96,7 @@ gallery.insertAdjacentHTML('afterbegin', createMarkup(images));
     
 // })
 
-const lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new simpleLightbox('.gallery a', {
     captions: true,
     captionType: 'attr',
     captionsData: 'alt',
